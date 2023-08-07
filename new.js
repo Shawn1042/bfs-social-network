@@ -150,20 +150,3 @@ console.log(sn.shortestFriendshipPath(bob, david)); // returns null
 charlie.addFriend(david);
 console.log(sn.shortestFriendshipPath(alice, david)); // Output: ['Alice', 'Bob', 'Charlie', 'David']
 
-
-/*
-The output is null because, when console.log(sn.shortestFriendshipPath(bob, david)); is called, there is no friendship path from Bob to David at that moment.
-
-Here's how the network of friendships looks like at that point:
-
-Alice is friends with Bob.
-Bob is friends with Charlie.
-David has no friends.
-So, there's no chain of friendships that connects Bob to David. The Breadth-First Search (BFS) implemented in the shortestFriendshipPath method
-will not find a path from Bob to David, so it returns null.
-
-The friendship between Charlie and David is established after that line, with charlie.addFriend(david);. Only after that, David is part of the network
-and can be reached from Bob (through Charlie). So, console.log(sn.shortestFriendshipPath(alice, david)); returns a path,
-because now there's a chain of friendships from Alice to David (through Bob and Charlie).
-
-*/
